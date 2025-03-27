@@ -8,9 +8,13 @@ export async function getPosts(category?: string) {
     return client
       .from("posts")
       .select("*, category ( name, slug )")
-      .eq("category", category);
+      .eq("category", category)
+      .order("created_at", { ascending: false });
 
-  return client.from("posts").select("*");
+  return client
+    .from("posts")
+    .select("*")
+    .order("created_at", { ascending: false });
 }
 
 export async function getPostBySlug(slug: string) {
