@@ -13,8 +13,6 @@ export default async function Page({
   const { slug } = await params;
   const { data: post } = await getPostBySlug(decodeURI(slug));
 
-  console.log(post);
-
   if (!post || post.length < 1) notFound();
 
   return (
