@@ -16,7 +16,7 @@ export default async function Page({
   if (!post || post.length < 1) notFound();
 
   return (
-    <>
+    <div className="relative w-full">
       <div className="flex flex-col items-start justify-start gap-4 pb-16">
         <div className="flex flex-row items-center justify-start gap-2">
           <Link
@@ -39,6 +39,6 @@ export default async function Page({
         </h1>
       </div>
       <MarkdownViewer markdown={post[0].content} />
-    </>
+    </div>
   );
 }
