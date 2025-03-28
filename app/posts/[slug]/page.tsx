@@ -3,6 +3,7 @@ import MarkdownViewer from "@/components/MarkdownViewer";
 import { notFound } from "next/navigation";
 import dayjs from "dayjs";
 import Link from "next/link";
+import readingTime from "reading-time";
 
 export default async function Page({
   params,
@@ -29,6 +30,10 @@ export default async function Page({
           <span className="text-zinc-400">·</span>
           <span className="text-zinc-400">
             {dayjs(post[0].created_at).format("YYYY. MM. DD")}
+          </span>
+          <span className="text-zinc-400">·</span>
+          <span className="text-zinc-400">
+            {Math.ceil(readingTime(post[0].content).minutes)} min read
           </span>
         </div>
         <h1 className="text-4xl leading-12 font-bold text-zinc-700">
