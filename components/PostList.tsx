@@ -18,7 +18,7 @@ const PostList = ({ posts }: Props) => {
       {posts.map((post) => (
         <li
           key={post.id}
-          className="h-auto w-full rounded-xl px-4 transition-colors hover:bg-zinc-100 max-md:px-0"
+          className="h-auto w-full rounded-xl px-4 transition-colors max-md:px-0 md:hover:bg-zinc-100"
         >
           <Link
             href={`/posts/${post.slug}`}
