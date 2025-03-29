@@ -21,7 +21,7 @@ export default async function Page({
         <div className="flex flex-row items-center justify-start gap-2">
           <Link
             href={`/?category=${post[0].category.slug}`}
-            className="rounded-lg bg-zinc-100 px-2 py-1 text-sm text-zinc-400"
+            className="rounded-lg bg-zinc-100 px-2 py-1 text-sm text-zinc-400 transition-colors hover:bg-zinc-200"
           >
             {post[0].category.name}
           </Link>
