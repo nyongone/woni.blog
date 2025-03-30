@@ -24,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className={`${pretendard.className}`}>
+      <body className={`${pretendard.className} dark:bg-zinc-800`}>
         <Header />
         <main className="m-[0_auto] min-h-screen w-[min(960px,100%)] px-4 py-8 max-md:px-6">
           {children}

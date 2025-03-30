@@ -15,15 +15,18 @@ const CategoryList = ({ categories }: Props) => {
 
   return (
     <div className="flex flex-row items-center justify-start gap-4 max-md:flex-col max-md:items-start max-md:gap-2">
-      <span className="font-bold text-zinc-500">CATEGORY</span>
+      <span className="font-bold text-zinc-500 dark:text-zinc-400">
+        CATEGORY
+      </span>
       <div className="flex flex-row flex-wrap items-center justify-start gap-2">
         <button
           className={clsx(
             "h-auto w-auto cursor-pointer rounded-lg px-3 py-1.5 text-sm",
             {
-              "bg-zinc-100 text-zinc-500 transition-colors hover:bg-zinc-200":
+              "bg-zinc-100 text-zinc-500 transition-colors hover:bg-zinc-200 dark:bg-transparent dark:text-zinc-200 dark:text-zinc-400 dark:hover:bg-zinc-600":
                 currentCategory,
-              "bg-blue-400 font-bold text-white": !currentCategory,
+              "bg-blue-400 font-bold text-white dark:bg-zinc-600":
+                !currentCategory,
             },
           )}
           onClick={() => router.push("/")}
@@ -36,9 +39,9 @@ const CategoryList = ({ categories }: Props) => {
             className={clsx(
               "h-auto w-auto cursor-pointer rounded-lg px-3 py-1.5 text-sm",
               {
-                "bg-zinc-100 text-zinc-500 transition-colors hover:bg-zinc-200":
+                "bg-zinc-100 text-zinc-500 transition-colors hover:bg-zinc-200 dark:bg-transparent dark:text-zinc-200 dark:text-zinc-400 dark:hover:bg-zinc-600":
                   category.slug !== currentCategory,
-                "bg-blue-400 font-bold text-white":
+                "bg-blue-400 font-bold text-white dark:bg-zinc-600":
                   category.slug === currentCategory,
               },
             )}

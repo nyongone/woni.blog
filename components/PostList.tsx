@@ -18,13 +18,15 @@ const PostList = ({ posts }: Props) => {
       {posts.map((post) => (
         <li
           key={post.id}
-          className="h-auto w-full rounded-xl px-4 transition-colors max-md:px-0 md:hover:bg-zinc-100"
+          className="h-auto w-full rounded-xl px-4 transition-colors max-md:px-0 md:hover:bg-zinc-100 dark:md:hover:bg-zinc-600"
         >
           <Link
             href={`/posts/${post.slug}`}
             className="flex h-12 flex-row items-center justify-between gap-4"
           >
-            <span className="text-zinc-500">{post.title}</span>
+            <span className="text-zinc-500 dark:text-zinc-50">
+              {post.title}
+            </span>
             <span className="text-sm text-zinc-400">
               {dayjs(post.created_at).format("YYYY. MM. DD")}
             </span>

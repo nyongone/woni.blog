@@ -21,7 +21,7 @@ export default async function Page({
         <div className="flex flex-row items-center justify-start gap-2">
           <Link
             href={`/?category=${post[0].category.slug}`}
-            className="rounded-lg bg-zinc-100 px-2 py-1 text-sm text-zinc-400 transition-colors hover:bg-zinc-200"
+            className="rounded-lg bg-zinc-100 px-2 py-1 text-sm text-zinc-400 transition-colors hover:bg-zinc-200 dark:bg-transparent dark:hover:bg-zinc-600"
           >
             {post[0].category.name}
           </Link>
@@ -34,7 +34,7 @@ export default async function Page({
             {Math.ceil(readingTime(post[0].content).minutes)} min read
           </span>
         </div>
-        <h1 className="text-4xl leading-12 font-bold text-zinc-700">
+        <h1 className="text-4xl leading-12 font-bold text-zinc-700 dark:text-zinc-300">
           {post[0].title}
         </h1>
       </div>

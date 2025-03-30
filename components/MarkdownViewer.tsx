@@ -1,8 +1,6 @@
 import React from "react";
 import { parseMarkdownToHTML } from "@/utils/markdown";
 
-import "@/styles/hljs.css";
-
 interface Props {
   markdown: string;
 }
@@ -10,7 +8,7 @@ interface Props {
 const MarkdownViewer = ({ markdown }: Props) => {
   return (
     <article
-      className="prose w-full pb-12"
+      className="prose dark:prose-dark w-full pb-12"
       dangerouslySetInnerHTML={{
         __html: parseMarkdownToHTML(markdown),
       }}
