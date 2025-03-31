@@ -4,6 +4,23 @@ import { notFound } from "next/navigation";
 import dayjs from "dayjs";
 import Link from "next/link";
 import readingTime from "reading-time";
+import { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const { data: post } = await getPostBySlug(decodeURI(slug));
+
+  if (post)
+    return {
+      title: `${post[0].title} | woni.blog`,
+    };
+
+  return { title: "woni.blog" };
+}
 
 export default async function Page({
   params,
