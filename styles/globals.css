@@ -1,7 +1,4 @@
 @import "tailwindcss";
-@import url("hljs.css") screen and (prefers-color-scheme: light);
-@import url("hljs-dark.css") screen and (prefers-color-scheme: dark);
-
 @plugin "@tailwindcss/typography";
 @config "../tailwind.config.js";
 

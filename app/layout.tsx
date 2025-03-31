@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
+import Head from "next/head";
 
 const pretendard = localFont({
   src: "../assets/fonts/PretendardVariable.woff2",
@@ -24,6 +25,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
+      <head>
+        <link
+          rel="stylesheet"
+          href="../styles/hljs.css"
+          media="screen and (prefers-color-scheme: light)"
+        />
+        <link
+          rel="stylesheet"
+          href="../styles/hljs-dark.css"
+          media="screen and (prefers-color-scheme: dark)"
+        />
+      </head>
       <body className={`${pretendard.className} dark:bg-zinc-800`}>
         <Header />
         <main className="m-[0_auto] min-h-screen w-[min(960px,100%)] px-4 py-8 max-md:px-6">
