@@ -70,6 +70,9 @@ export default {
             borderRadius: "0.75rem",
             overflowX: "auto",
             fontSize: "1rem",
+            "@media (width < 48rem)": {
+              fontSize: "0.75rem",
+            },
           },
           "pre code": {
             display: "inline-block",
@@ -79,6 +82,9 @@ export default {
             borderRadius: "0.5rem",
             backgroundColor: "var(--color-zinc-100)",
             color: "var(--color-zinc-700)",
+            "@media (width < 48rem)": {
+              fontSize: "0.75rem",
+            },
           },
           code: {
             display: "inline-block",
@@ -89,6 +95,9 @@ export default {
             borderRadius: "0.5rem",
             backgroundColor: "var(--color-zinc-50)",
             color: "var(--color-zinc-700)",
+            "@media (width < 48rem)": {
+              fontSize: "0.75rem",
+            },
             "&::before, &::after": {
               content: `"" !important`,
             },
