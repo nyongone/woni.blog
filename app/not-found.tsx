@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Page() {
   return (
     <div className="flex w-full flex-col items-center justify-center gap-2">
-      <span className="text-2xl font-semibold text-zinc-700">
+      <span className="text-2xl font-semibold text-zinc-700 dark:text-zinc-200">
         페이지를 찾을 수 없습니다.
       </span>
       <Link
