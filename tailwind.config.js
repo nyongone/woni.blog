@@ -10,27 +10,42 @@ export default {
             fontSize: "2rem",
             fontWeight: "bold",
             margin: "1.5rem 0",
+            "@media (width < 48rem)": {
+              fontSize: "1.75rem",
+            },
           },
           h2: {
             fontSize: "1.75rem",
             fontWeight: "bold",
             margin: "1.5rem 0",
+            "@media (width < 48rem)": {
+              fontSize: "1.5rem",
+            },
           },
           h3: {
             fontSize: "1.5rem",
             fontWeight: "bold",
             margin: "1.5rem 0",
+            "@media (width < 48rem)": {
+              fontSize: "1.25rem",
+            },
           },
           h4: {
             fontSize: "1.25rem",
             fontWeight: "bold",
             margin: "1.5rem 0",
+            "@media (width < 48rem)": {
+              fontSize: "1rem",
+            },
           },
           p: {
             fontSize: "1.25rem",
             fontWeight: "normal",
             lineHeight: "2",
             wordBreak: "break-all",
+            "@media (width < 48rem)": {
+              fontSize: "1rem",
+            },
           },
           ul: {
             fontSize: "1.25rem",
