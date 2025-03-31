@@ -4,7 +4,6 @@ import localFont from "next/font/local";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
-import Head from "next/head";
 
 const pretendard = localFont({
   src: "../assets/fonts/PretendardVariable.woff2",
