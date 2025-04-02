@@ -134,6 +134,9 @@ export default {
             overflowX: "auto",
             fontSize: "1rem",
             color: "var(--color-zinc-300)",
+            "@media (width < 48rem)": {
+              fontSize: "0.75rem",
+            },
           },
           "pre code": {
             display: "inline-block",
@@ -143,6 +146,9 @@ export default {
             borderRadius: "0.5rem",
             backgroundColor: "var(--color-zinc-700)",
             color: "var(--color-zinc-300)",
+            "@media (width < 48rem)": {
+              fontSize: "0.75rem",
+            },
           },
           code: {
             display: "inline-block",
@@ -153,6 +159,9 @@ export default {
             borderRadius: "0.5rem",
             backgroundColor: "var(--color-zinc-900)",
             color: "var(--color-zinc-300)",
+            "@media (width < 48rem)": {
+              fontSize: "0.75rem",
+            },
             "&::before, &::after": {
               content: `"" !important`,
             },
