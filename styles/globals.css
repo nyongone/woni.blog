@@ -1,6 +1,11 @@
 @import "tailwindcss";
+@import "./hljs.css";
+@import "./hljs-dark.css";
+
 @plugin "@tailwindcss/typography";
 @config "../tailwind.config.js";
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 * {
     box-sizing: border-box;

@@ -17,26 +17,28 @@ export const metadata: Metadata = {
   description: "안녕하세요, 같이 가치를 만드는 조용원 입니다.",
 };
 
+const themeScript = `
+  (() => {
+    const isDark = window.localStorage.getItem("isDark");
+    if (!isDark && window.matchMedia("(prefers-color-scheme: dark)").matches) 
+      document.documentElement.classList.add("dark");
+    if (isDark === "true") document.documentElement.classList.add("dark");
+  })();
+`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko">
+    <html lang="ko" suppressHydrationWarning>
       <head>
-        <link
-          rel="stylesheet"
-          href="../styles/hljs.css"
-          media="screen and (prefers-color-scheme: light)"
-        />
-        <link
-          rel="stylesheet"
-          href="../styles/hljs-dark.css"
-          media="screen and (prefers-color-scheme: dark)"
-        />
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body className={`${pretendard.className} dark:bg-zinc-800`}>
+      <body
+        className={`${pretendard.className} transition-colors dark:bg-zinc-800`}
+      >
         <Header />
         <main className="m-[0_auto] min-h-screen w-[min(960px,100%)] px-4 py-8 max-md:px-6">
           {children}
