@@ -88,7 +88,7 @@ export default {
           },
           code: {
             display: "inline-block",
-            padding: "0 0.3rem",
+            padding: "0 0.5rem",
             margin: "0 0.25rem",
             fontSize: "1rem",
             fontWeight: "normal",
@@ -146,12 +146,12 @@ export default {
           },
           code: {
             display: "inline-block",
-            padding: "0 0.3rem",
+            padding: "0 0.5rem",
             margin: "0 0.25rem",
             fontSize: "1rem",
             fontWeight: "normal",
             borderRadius: "0.5rem",
-            backgroundColor: "transparent",
+            backgroundColor: "var(--color-zinc-900)",
             color: "var(--color-zinc-300)",
             "&::before, &::after": {
               content: `"" !important`,
@@ -175,5 +175,4 @@ export default {
       },
     },
   },
-  darkMode: "media",
 };
