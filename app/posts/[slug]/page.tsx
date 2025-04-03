@@ -35,10 +35,12 @@ export default async function Page({
   if (!post || post.length < 1) notFound();
 
   return (
-    <div className="relative m-[0_auto] w-[min(768px,100%)] max-xl:w-[min(960px,100%)]">
-      <aside className="absolute top-12 right-full h-full min-w-[240px] pr-8 max-xl:hidden">
-        <PostToc tocs={getHeadingsFromMarkdown(post[0].content)} />
-      </aside>
+    <div className="relative m-[0_auto] w-[min(960px,100%)]">
+      {getHeadingsFromMarkdown(post[0].content).length > 0 && (
+        <aside className="absolute top-12 right-full h-full min-w-[240px] pr-8 max-2xl:hidden">
+          <PostToc tocs={getHeadingsFromMarkdown(post[0].content)} />
+        </aside>
+      )}
       <div className="flex flex-col items-start justify-start gap-4 pb-16">
         <div className="flex flex-row items-center justify-start gap-2">
           <Link
