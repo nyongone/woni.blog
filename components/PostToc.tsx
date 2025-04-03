@@ -60,7 +60,7 @@ const PostToc = ({ tocs }: Props) => {
         const currentToc = coords
           .slice()
           .reverse()
-          .find((coord) => coord.top - 96 <= _scrollTop);
+          .find((coord) => coord.top - 120 <= _scrollTop);
 
         setActivatedToc(currentToc?.id || null);
       };
@@ -77,19 +77,33 @@ const PostToc = ({ tocs }: Props) => {
   if (tocs.length <= 0) return <></>;
 
   return (
-    <ul className="sticky top-[100px] mr-8 flex h-full flex-col items-end justify-start gap-1">
+    <ul className="sticky top-[120px] flex flex-col items-start justify-start gap-1">
       {tocs.map((toc) => (
         <li
           key={toc.id}
-          className={clsx(`transition-all`, {
-            ["text-sm text-gray-300 hover:text-gray-700"]:
+          className={clsx(`text-sm transition-all`, {
+            ["text-gray-300 hover:text-gray-700 dark:text-gray-500 dark:hover:text-gray-300"]:
               activatedToc !== toc.id,
-            ["text-gray-700"]: activatedToc === toc.id,
+            ["text-gray-700 dark:text-gray-300"]: activatedToc === toc.id,
             ["pl-2"]: toc.level === 2,
             ["pl-4"]: toc.level === 3,
           })}
         >
-          <a href={`#${toc.id}`}>{toc.content}</a>
+          <a
+            href={`#${toc.id}`}
+            onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
+              e.preventDefault();
+              const el = document.getElementById(toc.id);
+
+              if (el) {
+                const height =
+                  el.getBoundingClientRect().top + window.scrollY - 120;
+                window.scrollTo({ top: height, behavior: "smooth" });
+              }
+            }}
+          >
+            {toc.content}
+          </a>
         </li>
       ))}
     </ul>

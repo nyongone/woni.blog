@@ -13,7 +13,7 @@ export default async function Page({
   const { data: categories } = await getCategories();
 
   return (
-    <>
+    <div className="m-[0_auto] w-[min(960px,100%)]">
       <CategoryList
         categories={
           categories?.map((category) => ({
@@ -35,6 +35,6 @@ export default async function Page({
           }
         />
       </div>
-    </>
+    </div>
   );
 }
