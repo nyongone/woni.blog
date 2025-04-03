@@ -24,7 +24,7 @@ const PostList = ({ posts }: Props) => {
             href={`/posts/${post.slug}`}
             className="flex h-12 flex-row items-center justify-between gap-4"
           >
-            <span className="text-zinc-500 dark:text-zinc-50">
+            <span className="overflow-hidden break-all overflow-ellipsis whitespace-nowrap text-zinc-500 max-md:w-[220px] dark:text-zinc-50">
               {post.title}
             </span>
             <span className="text-sm text-zinc-400">
