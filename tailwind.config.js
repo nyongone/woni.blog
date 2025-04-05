@@ -43,8 +43,12 @@ export default {
             fontWeight: "normal",
             lineHeight: "2",
             wordBreak: "break-all",
+            marginBlockStart: "1rem",
+            marginBlockEnd: "1rem",
             "@media (width < 48rem)": {
               fontSize: "1rem",
+              marginBlockStart: "0.75rem",
+              marginBlockEnd: "0.75rem",
             },
           },
           ul: {
