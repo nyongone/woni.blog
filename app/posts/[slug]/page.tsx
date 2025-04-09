@@ -32,7 +32,7 @@ export default async function Page({
   const { slug } = await params;
   const { data: post } = await getPostBySlug(decodeURI(slug));
 
-  if (!post || post.length < 1) notFound();
+  if (!post || post.length < 1 || post[0].isTemp) notFound();
 
   return (
     <div className="relative m-[0_auto] w-[min(960px,100%)]">

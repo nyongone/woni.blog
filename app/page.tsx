@@ -31,6 +31,7 @@ export default async function Page({
               slug: post.slug,
               category: post.category,
               created_at: post.created_at,
+              isTemp: post.isTemp,
             })) || []
           }
         />
