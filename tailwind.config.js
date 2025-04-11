@@ -115,7 +115,7 @@ export default {
           blockquote: {
             width: "auto",
             height: "auto",
-            padding: "0.75rem",
+            padding: "0.25rem",
             paddingLeft: "1.25rem",
             borderLeft: "5px solid var(--color-blue-400)",
             backgroundColor: "var(--color-blue-50)",
@@ -179,10 +179,11 @@ export default {
           blockquote: {
             width: "auto",
             height: "auto",
-            padding: "0.75rem",
+            padding: "0.25rem",
             paddingLeft: "1.25rem",
             borderLeft: "5px solid var(--color-blue-400)",
-            backgroundColor: "var(--color-blue-50)",
+            backgroundColor: "var(--color-zinc-700)",
+            color: "var(--color-white)",
           },
         },
       },
