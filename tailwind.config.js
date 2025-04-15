@@ -123,6 +123,32 @@ export default {
           iframe: {
             maxWidth: "100%",
           },
+          table: {
+            width: "100%",
+            height: "auto",
+            textAlign: "left",
+          },
+          th: {
+            padding: "0.75rem 0.5rem",
+            fontSize: "1rem",
+            backgroundColor: "var(--color-zinc-50)",
+            color: "var(--color-zinc-700)",
+          },
+          tr: {
+            backgroundColor: "var(--color-zinc-50)",
+            borderBottom: "1px solid var(--color-zinc-100)",
+            "&:nth-child(odd)": {
+              backgroundColor: "var(--color-white)",
+            },
+            "&:last-child": {
+              borderBottom: "none",
+            },
+          },
+          td: {
+            padding: "0.75rem 0.5rem",
+            fontSize: "1rem",
+            color: "var(--color-zinc-700)",
+          },
         },
       },
       dark: {
@@ -184,6 +210,32 @@ export default {
             borderLeft: "5px solid var(--color-blue-400)",
             backgroundColor: "var(--color-zinc-700)",
             color: "var(--color-white)",
+          },
+          table: {
+            width: "100%",
+            height: "auto",
+            textAlign: "left",
+          },
+          th: {
+            padding: "0.75rem 0.5rem",
+            fontSize: "1rem",
+            backgroundColor: "var(--color-zinc-600)",
+            color: "var(--color-white)",
+          },
+          tr: {
+            backgroundColor: "var(--color-zinc-700)",
+            borderBottom: "1px solid var(--color-zinc-600)",
+            "&:nth-child(odd)": {
+              backgroundColor: "transparent",
+            },
+            "&:last-child": {
+              borderBottom: "none",
+            },
+          },
+          td: {
+            padding: "0.75rem 0.5rem",
+            fontSize: "1rem",
+            color: "var(--color-zinc-300)",
           },
         },
       },
