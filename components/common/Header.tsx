@@ -13,7 +13,7 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 flex h-24 w-[100%] flex-row items-center justify-center bg-[rgba(255,255,255,0.5)] px-4 py-8 backdrop-blur-md max-md:h-16 max-md:px-0 max-md:py-0 dark:bg-[rgba(0,0,0,0)]">
       <div className="flex h-full w-[min(960px,100%)] flex-row items-center justify-between px-4">
-        <Link href="/public">
+        <Link href="/">
           <WoniBlogLogo
             width={100}
             height={24}
