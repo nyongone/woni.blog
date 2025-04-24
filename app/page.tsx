@@ -1,7 +1,7 @@
-import CategoryList from "@/components/CategoryList";
+import CategoryList from "@/components/category/CategoryList";
 import { getPosts } from "@/apis/post";
 import { getCategories } from "@/apis/category";
-import PostList from "@/components/PostList";
+import PostList from "@/components/post/PostList";
 
 export default async function Page({
   searchParams,

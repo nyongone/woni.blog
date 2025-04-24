@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "@/styles/globals.css";
 import localFont from "next/font/local";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import Header from "@/components/common/Header";
+import Footer from "@/components/common/Footer";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 
 const pretendard = localFont({

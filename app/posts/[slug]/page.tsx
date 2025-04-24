@@ -1,11 +1,11 @@
 import { getPostBySlug } from "@/apis/post";
-import MarkdownViewer from "@/components/MarkdownViewer";
+import MarkdownViewer from "@/components/common/MarkdownViewer";
 import { notFound } from "next/navigation";
 import dayjs from "dayjs";
 import Link from "next/link";
 import readingTime from "reading-time";
 import { Metadata } from "next";
-import PostToc from "@/components/PostToc";
+import PostToc from "@/components/post/PostToc";
 import { getHeadingsFromMarkdown } from "@/utils/markdown";
 
 export async function generateMetadata({
