@@ -5,14 +5,14 @@ export const dynamic = "force-dynamic";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const posts = await getPosts();
-  const postsSitemap: MetadataRoute.Sitemap = (posts.data || []).map(
-    (post) => ({
+  const postsSitemap: MetadataRoute.Sitemap = (posts.data || [])
+    .filter((post) => !post.isTemp)
+    .map((post) => ({
       url: `https://woni.blog/posts/${post.slug}`,
       lastModified: post.created_at,
       changeFrequency: "daily",
       priority: 0.9,
-    }),
-  );
+    }));
 
   return [
     {
