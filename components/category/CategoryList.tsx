@@ -10,7 +10,6 @@ interface Props {
 }
 
 const CategoryList = ({ categories }: Props) => {
-  const router = useRouter();
   const searchParams = useSearchParams();
   const currentCategory = searchParams.get("category");
 
