@@ -2,6 +2,7 @@ import CategoryList from "@/components/category/CategoryList";
 import { getPosts } from "@/apis/post";
 import { getCategories } from "@/apis/category";
 import PostList from "@/components/post/PostList";
+import { cache, Suspense } from "react";
 
 export default async function Page({
   searchParams,
@@ -10,18 +11,21 @@ export default async function Page({
 }) {
   const { category } = await searchParams;
   const { data: posts } = await getPosts((category as string) ?? undefined);
-  const { data: categories } = await getCategories();
+  const { data: categories } = await cache(getCategories)();
 
   return (
     <div className="m-[0_auto] w-[min(960px,100%)]">
-      <CategoryList
-        categories={
-          categories?.map((category) => ({
-            name: category.name as string,
-            slug: category.slug as string,
-          })) || []
-        }
-      />
+      <Suspense>
+        <CategoryList
+          categories={
+            categories?.map((category) => ({
+              name: category.name as string,
+              slug: category.slug as string,
+            })) || []
+          }
+        />
+      </Suspense>
+
       <div className="py-4">
         <PostList
           posts={

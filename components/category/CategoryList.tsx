@@ -1,15 +1,15 @@
 "use client";
 
 import React from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import clsx from "clsx";
+import Link from "next/link";
 
 interface Props {
   categories: { name: string; slug: string }[];
 }
 
 const CategoryList = ({ categories }: Props) => {
-  const router = useRouter();
   const searchParams = useSearchParams();
   const currentCategory = searchParams.get("category");
 
@@ -19,36 +19,36 @@ const CategoryList = ({ categories }: Props) => {
         CATEGORY
       </span>
       <div className="flex flex-row flex-wrap items-center justify-start gap-2">
-        <button
+        <Link
           className={clsx(
             "h-auto w-auto cursor-pointer rounded-lg px-3 py-1.5 text-sm",
             {
-              "bg-zinc-100 text-zinc-500 transition-colors hover:bg-zinc-200 dark:bg-transparent dark:text-zinc-200 dark:text-zinc-400 dark:hover:bg-zinc-600":
+              "bg-zinc-100 text-zinc-500 transition-colors hover:bg-zinc-200 dark:bg-transparent dark:text-zinc-200 dark:hover:bg-zinc-600":
                 currentCategory,
               "bg-blue-400 font-bold text-white dark:bg-zinc-600":
                 !currentCategory,
             },
           )}
-          onClick={() => router.push("/")}
+          href="/"
         >
           전체
-        </button>
+        </Link>
         {categories.map((category) => (
-          <button
+          <Link
             key={category.slug}
             className={clsx(
               "h-auto w-auto cursor-pointer rounded-lg px-3 py-1.5 text-sm",
               {
-                "bg-zinc-100 text-zinc-500 transition-colors hover:bg-zinc-200 dark:bg-transparent dark:text-zinc-200 dark:text-zinc-400 dark:hover:bg-zinc-600":
+                "bg-zinc-100 text-zinc-500 transition-colors hover:bg-zinc-200 dark:bg-transparent dark:text-zinc-200 dark:hover:bg-zinc-600":
                   category.slug !== currentCategory,
                 "bg-blue-400 font-bold text-white dark:bg-zinc-600":
                   category.slug === currentCategory,
               },
             )}
-            onClick={() => router.push(`/?category=${category.slug}`)}
+            href={`/?category=${category.slug}`}
           >
             {category.name}
-          </button>
+          </Link>
         ))}
       </div>
     </div>
