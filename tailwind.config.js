@@ -120,6 +120,13 @@ export default {
             borderLeft: "5px solid var(--color-blue-400)",
             backgroundColor: "var(--color-blue-50)",
           },
+          a: {
+            textDecoration: "underline",
+            textUnderlineOffset: "4px",
+            "&:hover": {
+              color: "var(--color-blue-400)",
+            },
+          },
           iframe: {
             maxWidth: "100%",
           },
