@@ -35,9 +35,9 @@ export default async function Page({
   if (!post || post.length < 1 || post[0].isTemp) notFound();
 
   return (
-    <div className="relative m-[0_auto] w-[min(960px,100%)]">
+    <div className="relative m-[0_auto] w-[min(768px,100%)]">
       {getHeadingsFromMarkdown(post[0].content).length > 0 && (
-        <aside className="absolute top-12 right-full h-full min-w-[240px] pr-8 max-2xl:hidden">
+        <aside className="absolute top-12 right-full h-full min-w-[200px] pr-8 max-xl:hidden">
           <PostToc tocs={getHeadingsFromMarkdown(post[0].content)} />
         </aside>
       )}

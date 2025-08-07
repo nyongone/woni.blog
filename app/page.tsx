@@ -14,7 +14,7 @@ export default async function Page({
   const { data: categories } = await cache(getCategories)();
 
   return (
-    <div className="m-[0_auto] w-[min(960px,100%)]">
+    <div className="m-[0_auto] w-[min(768px,100%)]">
       <Suspense>
         <CategoryList
           categories={
