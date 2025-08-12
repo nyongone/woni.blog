@@ -12,13 +12,6 @@ const nanumSquareNeo = localFont({
   variable: "--font-nanum-square-neo",
 });
 
-const pretendard = localFont({
-  src: "../assets/fonts/PretendardVariable.woff2",
-  style: "normal",
-  display: "swap",
-  variable: "--font-pretendard",
-});
-
 export const metadata: Metadata = {
   title: "woni.blog",
   description: "안녕하세요, 같이 가치를 만드는 조용원 입니다.",
