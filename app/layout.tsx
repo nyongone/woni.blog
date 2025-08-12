@@ -5,6 +5,13 @@ import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 
+const nanumSquareNeo = localFont({
+  src: "../assets/fonts/NanumSquareNeo-Variable.ttf",
+  style: "normal",
+  display: "swap",
+  variable: "--font-nanum-square-neo",
+});
+
 const pretendard = localFont({
   src: "../assets/fonts/PretendardVariable.woff2",
   style: "normal",
@@ -37,7 +44,7 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body
-        className={`${pretendard.className} transition-colors dark:bg-zinc-800`}
+        className={`${nanumSquareNeo.className} transition-colors dark:bg-zinc-800`}
       >
         <Header />
         <main className="min-h-screen w-full px-4 py-8 max-md:px-6">
